@@ -1,0 +1,45 @@
+.moodPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.moods {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.moods button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #3b2f6b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.moods button:hover {
+    background: #5742a8;
+}
+
+.historyButton {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.historyButton button {
+    padding: 12px 24px;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

@@ -1,0 +1,63 @@
+.meditationPage {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.exercises {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.exercise {
+    background: #2f2553;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.exercise button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.timer {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.breathingCircle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+
+    background-color: #7b6cff;
+
+
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80px;
+
+    margin: 40px auto;
+
+    transition: transform 4s ease-in-out;
+}
+
+.breathingCircle.inhale {
+    transform: scale(1.4);
+}
+
+.breathingCircle.exhale {
+    transform: scale(0.8);
+}
