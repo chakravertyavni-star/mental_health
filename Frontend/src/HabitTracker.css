@@ -1,0 +1,248 @@
+.habitRoot {
+  padding: 30px 16px 40px;
+}
+
+.habitHeader h1 {
+  font-size: 32px;
+  margin: 0;
+  color: #fff;
+}
+
+.habitHeader p {
+  margin: 8px 0 18px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+}
+
+.habitProgressCard {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 14px 14px 18px;
+  backdrop-filter: blur(6px);
+  margin-bottom: 18px;
+}
+
+.habitProgressTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.habitProgressLabel {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.habitProgressPct {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.habitProgressBar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.habitProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6a5acd, #3b82f6);
+  border-radius: 999px;
+  transition: width 220ms ease;
+}
+
+.habitGrid {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.habitCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 14px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+}
+
+.habitCardLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.habitDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.04);
+  flex: 0 0 auto;
+}
+
+.habitDot.done {
+  background: rgba(106, 90, 205, 0.95);
+  box-shadow: 0 0 0 6px rgba(106, 90, 205, 0.18);
+}
+
+.habitName {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 900;
+}
+
+.habitToggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.habitToggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.habitSwitch {
+  width: 46px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  position: relative;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.habitSwitch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  transition: transform 160ms ease;
+}
+
+.habitToggle input:checked + .habitSwitch {
+  background: rgba(106, 90, 205, 0.55);
+  border-color: rgba(106, 90, 205, 0.75);
+}
+
+.habitToggle input:checked + .habitSwitch::after {
+  transform: translateX(20px);
+  background: #fff;
+}
+
+.habitAddCard {
+  width: 100%;
+  max-width: 760px;
+  margin-top: 18px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.habitAddTitle {
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.habitAddRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.habitInput {
+  flex: 1;
+  min-width: 240px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+  outline: none;
+  font-size: 14px;
+}
+
+.habitAddBtn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(45deg, #6a5acd, #3b82f6);
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+.habitAddBtn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.habitAddHelp {
+  margin-top: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+/* Unified device layouts */
+@media (max-width: 767px) {
+  .habitRoot {
+    padding: 18px 10px 20px;
+  }
+
+  .habitHeader h1 {
+    font-size: 28px;
+  }
+
+  .habitProgressCard,
+  .habitGrid,
+  .habitAddCard {
+    max-width: calc(100% - 4px);
+  }
+
+  .habitCard {
+    padding: 12px 10px;
+  }
+
+  .habitName {
+    font-size: 14px;
+  }
+
+  .habitInput {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .habitAddBtn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .habitProgressCard,
+  .habitGrid,
+  .habitAddCard {
+    max-width: 760px;
+  }
+}
+

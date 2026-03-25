@@ -1,0 +1,14 @@
+.helpGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    width: 700px;
+}
+
+.helpCard {
+    background: rgba(40, 30, 80, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
