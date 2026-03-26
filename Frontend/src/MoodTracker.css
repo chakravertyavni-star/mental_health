@@ -1,0 +1,408 @@
+.moods {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.moods button {
+  padding: 10px 16px;
+  border: 2px solid #5742a8;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.moods button:hover {
+  background: #5742a8;
+  transform: scale(1.05);
+}
+
+.moods button.active {
+  background: linear-gradient(45deg, #6a5acd, #3b82f6);
+  border-color: #6a5acd;
+  font-weight: bold;
+}
+
+.result {
+  margin-top: 40px;
+  background: rgba(60, 40, 120, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+}
+
+.intensitySection {
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(40, 30, 80, 0.7);
+  border-radius: 12px;
+}
+
+.intensitySection h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.intensityDisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.moodIndicator {
+  font-size: 18px;
+}
+
+.intensityLabel {
+  font-weight: bold;
+  color: #6a5acd;
+  font-size: 16px;
+}
+
+.intensitySlider {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #3b82f6, #6a5acd);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.intensitySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #6a5acd;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 0 10px rgba(106, 90, 205, 0.5);
+}
+
+.intensitySlider::-webkit-slider-thumb:hover {
+  background: #7c68d8;
+  box-shadow: 0 0 15px rgba(106, 90, 205, 0.7);
+}
+
+.intensitySlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #6a5acd;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+  box-shadow: 0 0 10px rgba(106, 90, 205, 0.5);
+}
+
+.intensitySlider::-moz-range-thumb:hover {
+  background: #7c68d8;
+  box-shadow: 0 0 15px rgba(106, 90, 205, 0.7);
+}
+
+.intensityValue {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.whySection {
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(40, 30, 80, 0.7);
+  border-radius: 12px;
+}
+
+.whySection h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.reasonButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.reasonBtn {
+  padding: 10px 16px;
+  border: 2px solid #5742a8;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.reasonBtn:hover {
+  background: #5742a8;
+  transform: scale(1.05);
+}
+
+.reasonBtn.active {
+  background: linear-gradient(45deg, #6a5acd, #3b82f6);
+  border-color: #6a5acd;
+  font-weight: bold;
+}
+
+.selectedReason {
+  font-size: 14px;
+  color: #6a5acd;
+  margin: 10px 0 0 0;
+}
+
+.saveBtn {
+  padding: 12px 30px;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #6a5acd, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.saveBtn:hover {
+  transform: scale(1.05);
+}
+
+.historyButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #6a5acd, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.historyButton:hover {
+  transform: scale(1.05);
+}
+
+.analyticsSection {
+  width: 100%;
+  max-width: 980px;
+  margin-top: 28px;
+  padding: 18px 16px 24px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+}
+
+.analyticsTitle {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.analyticsControls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-bottom: 14px;
+}
+
+.analyticsFilterGroup,
+.analyticsTrendGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.analyticsPill {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+  font-size: 13px;
+}
+
+.analyticsPill:hover {
+  transform: translateY(-1px);
+}
+
+.analyticsPill.active {
+  background: rgba(106, 90, 205, 0.35);
+  border-color: rgba(106, 90, 205, 0.7);
+}
+
+.analyticsLoading {
+  padding: 18px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+}
+
+.analyticsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 860px) {
+  .analyticsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.analyticsCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.analyticsCardTitle {
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.analyticsGraph {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+.analyticsEmpty {
+  padding: 24px 10px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 700;
+}
+
+.distributionList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.distRow {
+  display: grid;
+  grid-template-columns: 1fr 120px 44px;
+  gap: 10px;
+  align-items: center;
+}
+
+.distLabel {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.distBar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.distFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6a5acd, #3b82f6);
+  border-radius: 999px;
+}
+
+.distPct {
+  text-align: right;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+}
+
+/* Unified device layouts */
+@media (max-width: 767px) {
+  .result {
+    max-width: calc(100% - 20px);
+    padding: 18px 14px;
+    margin-top: 20px;
+  }
+
+  .moods {
+    max-width: calc(100% - 20px);
+    gap: 8px;
+  }
+
+  .moods button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .intensityDisplay {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .analyticsSection {
+    max-width: calc(100% - 20px);
+    padding: 14px 12px 16px;
+  }
+
+  .analyticsControls {
+    justify-content: flex-start;
+  }
+
+  .analyticsFilterGroup,
+  .analyticsTrendGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .analyticsPill {
+    flex: 1;
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+
+  .distRow {
+    grid-template-columns: 1fr 90px 40px;
+  }
+
+  .historyButton {
+    position: static;
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .result,
+  .analyticsSection {
+    max-width: 720px;
+  }
+
+  .moods {
+    max-width: 760px;
+  }
+}

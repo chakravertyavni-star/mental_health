@@ -1,0 +1,596 @@
+.journalHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.journalHeader h1 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.journalHeader p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.emptyText {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.emptySubtext {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+.emptyAction {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #6a5acd, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.emptyAction:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(106, 90, 205, 0.6);
+}
+
+.journalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.journalCard {
+  background: linear-gradient(135deg, rgba(106, 90, 205, 0.2), rgba(59, 130, 246, 0.2));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.journalCard:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, rgba(106, 90, 205, 0.3), rgba(59, 130, 246, 0.3));
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(106, 90, 205, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cardHeader h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+}
+
+.moodIndicator {
+  font-size: 24px;
+}
+
+.cardMeta {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+}
+
+.cardPreview {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  min-height: 50px;
+}
+
+.cardAction {
+  width: 100%;
+  padding: 10px;
+  background: rgba(106, 90, 205, 0.3);
+  border: 1px solid rgba(106, 90, 205, 0.5);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.cardAction:hover {
+  background: rgba(106, 90, 205, 0.5);
+  transform: scale(1.02);
+}
+
+.entryView {
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.backBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.entryContent {
+  background: linear-gradient(135deg, rgba(106, 90, 205, 0.15), rgba(59, 130, 246, 0.15));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 40px;
+  margin-top: 50px;
+}
+
+.entryHeader {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.entryHeader h1 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.entryMeta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.entryMood {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.entryMood label {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.moodTag {
+  display: inline-block;
+  background: linear-gradient(45deg, #6a5acd, #3b82f6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.entryReflection {
+  margin-bottom: 30px;
+}
+
+.entryReflection label {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.entryReflection p {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-left: 3px solid #6a5acd;
+  border-radius: 6px;
+  color: #fff;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.deleteBtn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 100, 100, 0.2);
+  border: 1px solid rgba(255, 100, 100, 0.5);
+  color: #ffcccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.deleteBtn:hover {
+  background: rgba(255, 100, 100, 0.4);
+  box-shadow: 0 0 15px rgba(255, 100, 100, 0.3);
+}
+
+/* ===== Daily Digital Journal (calm, minimal) ===== */
+
+.journalDailyRoot {
+  min-height: 100vh;
+  padding: 22px 16px 40px;
+  color: #fff;
+  background: radial-gradient(circle at 20% 10%, rgba(106, 90, 205, 0.18), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.16), transparent 45%),
+    rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(3px);
+}
+
+.journalTopBar {
+  max-width: 1100px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.journalBackBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  color: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  font-size: 22px;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.journalBackBtn:hover {
+  transform: scale(1.03);
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.journalNavButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.journalJumpSpacer {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.journalNavBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-size: 22px;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.journalNavBtn:hover {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.journalDateBlock {
+  flex: 1;
+  text-align: center;
+}
+
+.journalDateLine {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.journalTodayLabel {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.2px;
+}
+
+.journalDate {
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+}
+
+.journalGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+}
+
+.historyPanel {
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  overflow: hidden;
+  height: calc(100vh - 120px);
+  min-height: 520px;
+}
+
+.historyHeader {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.historyTitle {
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+
+.historyJumpLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.historyJumpInput {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 8px 10px;
+  outline: none;
+}
+
+.historyList {
+  overflow: auto;
+  height: calc(100% - 68px);
+}
+
+.historyEmpty {
+  padding: 18px 16px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.historyItem {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background 0.12s ease;
+  outline: none;
+}
+
+.historyItem:last-child {
+  border-bottom: none;
+}
+
+.historyItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.historyItem.active {
+  background: rgba(106, 90, 205, 0.18);
+}
+
+.historyItemTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.historyItemDate {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+}
+
+.historyTodayTag {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(45, 193, 168, 0.22);
+  border: 1px solid rgba(45, 193, 168, 0.35);
+}
+
+.historyItemPreview {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 13px;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.journalPage {
+  background: rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  min-height: 520px;
+  padding: 16px 16px 0;
+  overflow: visible;
+}
+
+.journalTextarea {
+  width: 100%;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+  outline: none;
+  font-size: 18px;
+  line-height: 1.7;
+  resize: none;
+  padding: 12px 0 18px;
+  min-height: 60vh;
+  max-height: 65vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.9) rgba(0, 0, 0, 0.2);
+}
+
+/* WebKit scrollbar styling */
+.journalTextarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.journalTextarea::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.journalTextarea::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 999px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.journalTextarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 1);
+}
+
+.journalTextarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+@keyframes journalSwitchIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.journalPage {
+  animation: journalSwitchIn 180ms ease both;
+  touch-action: pan-y;
+}
+
+@media (max-width: 920px) {
+  .journalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .historyPanel {
+    height: auto;
+    min-height: auto;
+  }
+
+  .historyList {
+    max-height: 280px;
+  }
+
+  .journalPage {
+    height: auto;
+    min-height: 55vh;
+  }
+
+  .journalTextarea {
+    min-height: 45vh;
+  }
+}
+
+/* Unified device layouts */
+@media (max-width: 767px) {
+  .journalDailyRoot {
+    padding: 14px 10px 18px;
+  }
+
+  .journalTopBar {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .journalBackBtn,
+  .journalNavBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .journalDate {
+    font-size: 12px;
+  }
+
+  .historyList {
+    max-height: 200px;
+  }
+
+  .journalPage {
+    min-height: 52vh;
+    padding: 12px 12px 0;
+  }
+
+  .journalTextarea {
+    font-size: 16px;
+    min-height: 40vh;
+    max-height: 56vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .journalGrid {
+    grid-template-columns: 280px 1fr;
+    gap: 14px;
+  }
+
+  .historyPanel {
+    min-height: 440px;
+    height: calc(100vh - 120px);
+  }
+
+  .journalTextarea {
+    font-size: 17px;
+    max-height: 60vh;
+  }
+}
