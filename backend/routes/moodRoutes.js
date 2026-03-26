@@ -1,21 +1,22 @@
 const express = require("express");
+
 const router = express.Router();
 
 const Mood = require("../models/Mood");
+const authMiddleware = require("../middleware/authMiddleware");
 
 
 // SAVE MOOD
-router.post("/save", async (req, res) => {
+router.post("/save", authMiddleware, async (req, res) => {
 
     try {
 
-        const { username, mood } = req.body;
+        const { mood } = req.body;
 
         const newMood = new Mood({
-            username: username,
+            userId: req.user.id,
             mood: mood,
-            date: new Date().toLocaleDateString(),
-            time: new Date().toLocaleTimeString()
+            createdAt: new Date()
         });
 
         await newMood.save();
@@ -24,7 +25,7 @@ router.post("/save", async (req, res) => {
 
     } catch (error) {
 
-        console.error(error);   // this will show the real error in terminal
+        console.error(error);
         res.status(500).json({ message: "Server error" });
 
     }
@@ -33,13 +34,13 @@ router.post("/save", async (req, res) => {
 
 
 // GET USER MOODS
-router.get("/:username", async (req, res) => {
+router.get("/", authMiddleware, async (req, res) => {
 
     try {
 
         const moods = await Mood.find({
-            username: req.params.username
-        });
+            userId: req.user.id
+        }).sort({ createdAt: -1 });
 
         res.json(moods);
 

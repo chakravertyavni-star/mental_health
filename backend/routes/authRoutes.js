@@ -1,26 +1,25 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
 
 const router = express.Router();
 
 
- // SIGNUP
+// SIGNUP
 router.post("/signup", async (req, res) => {
 
     const { username, email, password } = req.body;
 
     try {
 
-        // check empty fields
         if (!username || !email || !password) {
             return res.status(400).json({
                 message: "All fields are required"
             });
         }
 
-        // check if user already exists
         const existingUser = await User.findOne({ email });
 
         if (existingUser) {
@@ -29,10 +28,8 @@ router.post("/signup", async (req, res) => {
             });
         }
 
-        // hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // create user
         const newUser = new User({
             username,
             email,
@@ -54,7 +51,6 @@ router.post("/signup", async (req, res) => {
     }
 
 });
-
 
 
 // LOGIN
@@ -80,9 +76,17 @@ router.post("/login", async (req, res) => {
             });
         }
 
+        // 🔑 Generate JWT token
+        const token = jwt.sign(
+            { id: user._id },
+            process.env.JWT_SECRET,
+            { expiresIn: "1d" }
+        );
+
         res.json({
             message: "Login successful",
-            username: user.username
+            username: user.username,
+            token
         });
 
     } catch (error) {

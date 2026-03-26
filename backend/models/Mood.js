@@ -1,12 +1,18 @@
 const mongoose = require("mongoose");
 
-const MoodSchema = new mongoose.Schema({
+const moodSchema = new mongoose.Schema({
+  userId: {
+    type: String,
+    required: true
+  },
+  mood: {
+    type: String,
+    required: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
 
-  username: String,
-  mood: String,
-  date: String,
-  time: String
-
-}, { versionKey:false });
-
-module.exports = mongoose.model("Mood", MoodSchema);
+module.exports = mongoose.model("Mood", moodSchema);
